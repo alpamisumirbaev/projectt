@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+body{
+    background:  url(kar1.jpg) center/cover ;
+    background-repeat: no-repeat;
+    
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form{
+    width: 400px;
+    background: rgba(0,0,0,8);
+    border-radius: 30px;
+    padding: 40px;
+
+}
+.login-form h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+.login-form input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+}
+.login-form button{
+    width: 100%;
+    
+}
+
+#send{
+    color: green;
+    font-size: 40px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+}

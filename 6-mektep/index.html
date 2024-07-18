@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <form action="#" class="login-form" name="submit-to-google-sheet">
+            <h2>Oqıwshınıń maǵlıwmatları</h2>
+            <input type="text" name="Oqıwshınıń klassı" id="Oqıwshınıń klassı" placeholder="Oqıwshınıń klassı" required autocomplete="off">
+            <input type="text" name="Oqıwshınıń FAÁ" id="Oqıwshınıń FAÁ" placeholder="Oqıwshınıń FAÁ" autocomplete="off" autofocus required>
+            <input type="date" name="Tuwılǵan-kúni-ayı-jılı" id="Tuwılǵan-kúni-ayı-jılı" placeholder="Tuwılǵan-kúni-ayı-jılı" autocomplete="off"  required>
+            <input type="number" name="telefon nomeri" id="telefon nomeri" placeholder="telefon nomeri" autocomplete="off" required>
+            <input type="text" name="Metrika, AD nomeri" id="Metrika, AD nomeri" placeholder="Metrika, AD nomeri" autocomplete="off" required>
+            <input type="text" name="Jasaw mánzili" id="Jasaw mánzili" placeholder="Jasaw mánzili" autocomplete="off" required>
+            <h2>Oqıwshınıń ákesi haqqında maǵlıwmatlar</h2>
+            
+            <input type="text" name="fam" id="fam" placeholder="FAÁ" autocomplete="off" required>
+            <input type="date" name="Tuwilgan.Kuni.Ayi.Jili" id="Tuwilgan-Kuni-Ayi-Jili" placeholder="Tuwilgan-Kuni-Ayi-Jili" autocomplete="off"  required>
+            <input type="number" name="Telefon nomeri" id="Telefon nomeri" placeholder="Telefon nomeri" autocomplete="off" required>
+            <input type="text" name="Passport, AD nomeri" id="Passport, AD nomeri" placeholder="Passport, AD nomeri" autocomplete="off" required>
+            <input type="text" name="Jumıs ornı" id="Jumıs ornı" placeholder="Jumıs ornı" required>
+            <h2>Oqıwshınıń anası haqqında maǵlıwmatlar</h2>
+            <input type="text" name="faá" id="faá" placeholder="FAÁ" autocomplete="off" required>
+            <input type="date" name="Tuwilgan,kuni,ayi,Jili" id="Tuwilgan,kuni,ayi,Jili" placeholder="Tuwilgan-kuni-ayi-Jili" autocomplete="off"  required>
+            <input type="number" name="Telefon-nomeri" id="Telefon-nomeri" placeholder="Telefon-nomeri" autocomplete="off" required>
+            <input type="text" name="Passport yáki AD nomeri" id="Passport yáki AD nomeri" placeholder="Passport yáki AD nomeri" autocomplete="off" required>
+            <input type="text" name="Jumıs-ornı" id="Jumıs-ornı" placeholder="Jumıs-ornı" required>
+            
+            <button type="submit">Jiberiw</button>
+            <span id="send"></span>
+
+        </form>
+
+    </div>
+    
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzaiK-1Cd_06wmrRRNfP9gg5VdOnkGp8jzewxLmHEq4S7yn_jU19YCJVlm3ux7lVvPhww/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const send = document.getElementById('send')
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                send.innerHTML = 'Jiberildi !!!'
+                setTimeout(function(){
+                    send.innerHTML = ''
+                }, 50000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script> 
+    
+</body>
+</html>
